@@ -1,7 +1,19 @@
 <?php
   include '../components/connection.php';
   
+  if(isset($_COOKIE['tutor_id']))
+  {
+    $tutor_id = $_COOKIE['tutor_id'];
+  }else{
+    $tutor_id = '';
+    header('location: login.php');
+  }
 ?>
+<style>
+  <?php include '../css/admin.css'; ?>
+</style>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,5 +29,6 @@
 </head>
 <body>
   <?php include '../components/admin_header.php';?>
+  <script src="../js/admin_script.js"></script>
 </body>
 </html>
